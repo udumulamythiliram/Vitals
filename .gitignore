@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+venv/
+backend/venv/
+
+# Build artifacts
+frontend/dist/
+backend/__pycache__/
+*/__pycache__/
+*.pyc
+
+# Local databases & uploads
+backend/data/*.log
+*.log
+
+# Environment variables
+.env
+backend/.env
+
+# IDE
+.vscode/
+.idea/

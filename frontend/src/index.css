@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f0f9ff;
+  --surface: #ffffff;
+  --surface-2: #e0f2fe;
+  --text: #082f49;
+  --text-muted: #0369a1;
+  --primary: #0369a1;
+  --primary-contrast: #ffffff;
+  --primary-hover: #075985;
+  --secondary: #0284c7;
+  --accent: #06b6d4;
+  --border: #bae6fd;
+  --ring: #38bdf8;
+  --success: #16a34a;
+  --success-bg: #ecfdf5;
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --font-scale: 100%;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  --letter-spacing-base: 0em;
+  --density-padding: 0.875rem;
+  --motion-scale: 1;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility Modes */
+.dyslexia-font {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+.elderly-mode {
+  --font-size-base: 20px !important;
+  --line-height-base: 1.7 !important;
+}
+
+.elderly-mode button,
+.elderly-mode a,
+.elderly-mode input,
+.elderly-mode select {
+  min-height: 56px !important;
+  font-size: 1.15rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+.large-controls button,
+.large-controls a,
+.large-controls input,
+.large-controls select {
+  min-height: 52px;
+  min-width: 52px;
+}
+
+/* Minimum 44x44px touch targets everywhere */
+button, a, input, select, textarea, [role="button"] {
+  min-height: 44px;
+}
+
+.underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+}
+
+.highlight-hover p:hover,
+.highlight-hover li:hover {
+  background-color: var(--surface-2);
+  outline: 2px solid var(--accent);
+  border-radius: 4px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  padding: 8px 16px;
+  z-index: 9999;
+  transition: top 0.2s;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* High contrast outline focus rings */
+*:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
